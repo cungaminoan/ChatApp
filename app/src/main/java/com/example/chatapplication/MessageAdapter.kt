@@ -30,10 +30,10 @@ class MessageAdapter(val context: Context, val messageList: ArrayList<Message>) 
         else{
             //inflate sent
             val view: View = LayoutInflater.from(context).inflate(R.layout.send, parent, false)
-            return ReceiveViewHolder(view)
+            return SentViewHolder(view)
         }
-
     }
+
 
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -42,11 +42,11 @@ class MessageAdapter(val context: Context, val messageList: ArrayList<Message>) 
 
     if(holder.javaClass == SentViewHolder::class.java){
         val viewHolder = holder as SentViewHolder
-        viewHolder.sentMessage.text = currentMessage.message
+        holder.sentMessage.text = currentMessage.message
     }
     else{
         val viewHolder = holder as ReceiveViewHolder
-        viewHolder.receiveMessage.text = currentMessage.message
+        holder.receiveMessage.text = currentMessage.message
     }
     }
 

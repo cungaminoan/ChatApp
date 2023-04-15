@@ -44,8 +44,6 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
-
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
